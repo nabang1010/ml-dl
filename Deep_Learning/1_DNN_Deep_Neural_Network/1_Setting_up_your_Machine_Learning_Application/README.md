@@ -91,3 +91,29 @@ The two key numbers to look at to understand `bias` and `variance` are:
 
 
 # Basic Recipe for Machine Learning
+
+In training neural network that is the basic recipe you use:
+- After training initial model, Ask does algorithm have `high bias` ? ( Training data performance )
+  - If it `high bias` -> not fit the training data well  
+    - Try bigger network (more hidden units, more layers,...)
+    - Try train longer 
+    - Try more advanced optimization algorithms 
+    - Try other neural network architecture (CNN, RNN, ...) ( Maybe work or not work )
+    - **Try util fit with the `training data` -> solve `high bias`**
+  - If not `high bias`
+    - Ask does algorithm have `high variance` ? ( Dev data performance )
+      - If it `high variance` -> not fit the dev data well
+        - Try more data
+        - Try regularization
+        - Try other neural network architecture (CNN, RNN, ...) ( Maybe work or not work )
+        - **Try util fit both `training data` and `dev data` -> `low bias` and `low variance`**
+      - If not `high variance` -> `low bias` and `low variance` -> `good model`
+
+
+![Basic Recipe for Machine Learning](./images/basic_recipe.png)
+
+## Bias / Variance trade-off
+
+No tool can drive down both `bias` and `variance` simultaneously. You have to trade-off between `bias` and `variance`.
+
+Deep Learning has been so useful for supervised learning, that there's much less of this tradeoff where you have to carefully balance `bias` and `variance`.
